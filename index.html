@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>😎 Boss Birthday 😎</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+    history.scrollRestoration = "manual";
+    </script>
+</head>
+
+<body>
+    <div id="countdownScreen">
+<h1 id="countdownNumber">3</h1>
+</div>
+<div id="progressBar"></div>
+
+<!-- Floating Background Particles -->
+<div class="particles" id="particles"></div>
+
+<!-- Fireworks Canvas -->
+<canvas id="fireworks"></canvas>
+
+<!-- 🎵 Background Music -->
+<audio id="bgMusic" loop preload="auto">
+<source src="Birthday Song.mp3" type="audio/mpeg">  
+</audio>
+
+<!-- 🔊 Countdown Sound -->
+<audio id="countdownSound" preload="auto">
+    <source src="Countdown.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🎤 Birthday Wish Audio -->
+<audio id="birthdayWishAudio" preload="auto">
+    <source src="Birthday Wish.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🎮 Level 25 Section -->
+<section class="level-section">
+    <div class="level-box">
+        <h2 class="level-title">👑 Level Unlocked 👑</h2>
+
+        <div class="level-number">25</div>
+
+        <p class="level-text">
+            
+            25 years of grace, strength, and a smile that lights up every room.<br>
+            You've grown into someone truly remarkable and the most beautiful chapters of your life are just beginning. 
+        </p>
+
+        <button class="celebrate-btn" onclick="celebrateWithBalloons()">
+           🎂 Celebrate 🎂
+        </button>
+    </div>
+</section>
+
+<!-- ⏱️ Age Counter Section -->
+<section class="age-counter-section" id="ageCounter">
+    <h2 class="section-title">"Since the day the universe got brighter....."</h2>
+    <div class="age-counter-grid">
+        <div class="age-counter-box">
+            <span class="age-counter-number" id="counterYears">0</span>
+            <span class="age-counter-label">Years</span>
+        </div>
+        <div class="age-counter-box">
+            <span class="age-counter-number" id="counterDays">0</span>
+            <span class="age-counter-label">Days</span>
+        </div>
+        <div class="age-counter-box">
+            <span class="age-counter-number" id="counterHours">0</span>
+            <span class="age-counter-label">Hours</span>
+        </div>
+        <div class="age-counter-box">
+            <span class="age-counter-number" id="counterMinutes">0</span>
+            <span class="age-counter-label">Minutes</span>
+        </div>
+        <div class="age-counter-box pulse-box">
+            <span class="age-counter-number" id="counterSeconds">0</span>
+            <span class="age-counter-label">Seconds</span>
+        </div>
+    </div>
+    <p class="age-counter-caption">🌸 Every single second has been a gift to the world 🌸</p>
+</section>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="typewriter" id="typewriter">Happiest Birthday Sahithi Annapa Reddy</h1>
+            <p class="subtitle fade-in">"A queen turns 25 today — bow down....!"</p>
+            <div class="floating-hearts">
+                <div class="heart">🤗</div>
+                <div class="heart">😎</div>
+                <div class="heart">💙</div>
+                <div class="heart">💞</div>
+                <div class="heart">✨</div>
+                <div class="heart">🫂</div>
+            </div>
+            <button class="cta-button" onclick="scrollToSection('gallery')">
+                🎉 Inka Start Cheddama 🎉
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title"> 📸 Beautiful Memories 📸 </h2>
+            <div class="gallery-grid">
+                <div class="photo-card" data-aos="fade-up" data-delay="100">
+                    <div class="photo-container">
+                        <img src="Image2.jpeg"
+                            alt="Smiling under moonlight">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">🌙🌹"You sitting there with that smile like you don't even realize how beautiful the moment looks. Honestly, you make every place brighter just by being there. ✨"</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-aos="fade-up" data-delay="200">
+                    <div class="photo-container">
+                        <img src="Image3.jpeg"
+                            alt="Sweet memory">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">🌟🖤"You always look cool and confident even when you're just standing there thinking about something. That calm vibe is so you. 😌"</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-aos="fade-up" data-delay="300">
+                    <div class="photo-container">
+                        <img src="Image9.jpeg"
+                            alt="Happy times">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">🚙☀️"You sitting on that Jeep like the main character of your own story confident, fearless, and always ready for the next adventure. 😎"</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-aos="fade-up" data-delay="400">
+                    <div class="photo-container">
+                        <img src="Image10.jpeg"
+                            alt="Love moment">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">🌿💚"You enjoying the calm moments like this peaceful, happy, and just being yourself. Those are always the best memories. 😊"</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-aos="fade-up" data-delay="500">
+                    <div class="photo-container">
+                        <img src="Image7.jpeg"
+                            alt="Beautiful day">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">🌊☁️"You and your love for adventures and pretty views this picture is exactly your vibe. Always smiling and enjoying the moment. 💙"</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-aos="fade-up" data-delay="600">
+                    <div class="photo-container">
+                        <img src="Image8.jpeg"
+                            alt="Romantic moment">
+                        <div class="photo-overlay">
+                            <div class="photo-caption">🏙️✨"You exploring new places and turning every trip into a memory. Somehow every place looks better when you're in the picture. 📸💫"</div>
+                            <button class="like-btn" onclick="toggleLike(this)">
+                                <span class="heart-icon">🤍</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 🌟 Star Wishes Section -->
+<section class="star-section" id="starSection">
+    <h2 class="section-title">💫 Make a Wish on a Star 💫</h2>
+    <div class="star-hint">Tap to make a wish!</div>
+    <div class="star-sky" id="starSky"></div>
+    <p class="star-hint">✨ <span id="starCount">0</span> / 8 stars discovered</p>
+</section>
+
+    <!-- Slideshow Section -->
+    <section class="slideshow-section">
+    <h2 class="section-title"> 📸 More Memories 📸</h2>
+
+    <div class="slideshow-container">
+
+        <div class="slide fade">
+            <img src="Image1.jpeg" alt="Birthday memory">
+        </div>
+
+        <div class="slide fade">
+            <img src="Image5.jpeg" alt="Celebration moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Image6.jpeg" alt="Adventure moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Image4.jpeg" alt="Family gathering">
+        </div>
+
+        <div class="slide fade">
+            <img src="Image 11.JPG" alt="Friendship moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 1.jpeg" alt="Fun activity">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 2.jpeg" alt="Special occasion">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 3.jpeg" alt="Surprise moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 6.jpeg" alt="Happy moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 7.jpeg" alt="Exciting moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 8.JPG" alt="Memorable moment">
+        </div>
+        
+        <div class="slide fade">
+            <img src="Sahithi 9.jpeg" alt="Exciting moment">
+        </div>
+
+        <div class="slide fade">
+            <img src="Sahithi 12.jpeg" alt="Memorable moment">
+        </div>
+
+    </div>
+    </section>
+
+        <!-- 🎥 Watch Video Button -->
+<section class="video-button-section">
+    <button type="button" class="watch-video-btn" onclick="openVideo()">
+        🎬 Watch Special Video 🎬
+    </button>
+</section>
+
+<!-- 🎬 Video Popup -->
+<div id="videoPopup" class="video-popup">
+    <div class="video-popup-content">
+        <button class="close-video" onclick="closeVideo()" aria-label="Close video">✖</button>
+
+        <video id="birthdayVideo" controls playsinline>
+            <source src="Video.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<!-- Ultimate Cake Celebration -->
+<section class="ultimate-cake-section">
+<h2 class="section-title">🎂 Grand cake Cutting 🎂</h2>
+
+<div class="cake-wrapper">
+
+    <!-- Candles -->
+    <div class="candles-row">
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+    </div>
+
+    <div class="cake-stage" id="cakeStage" onclick="ultimateCakeCut()">
+
+        <!-- Top tier -->
+        <div class="cake-tier tier-top">
+            <div class="tier-frosting"></div>
+            <div class="drip d1"></div><div class="drip d2"></div><div class="drip d3"></div>
+            <div class="tier-decoration">🌸 25 🌸</div>
+        </div>
+
+        <!-- Middle tier -->
+        <div class="cake-tier tier-mid">
+            <div class="tier-frosting"></div>
+            <div class="drip d1"></div><div class="drip d2"></div><div class="drip d3"></div><div class="drip d4"></div>
+            <div class="tier-decoration">👑 Happy Birthday 👑</div>
+        </div>
+
+        <!-- Bottom tier -->
+        <div class="cake-tier tier-bot">
+            <div class="tier-frosting"></div>
+            <div class="drip d1"></div><div class="drip d2"></div><div class="drip d3"></div><div class="drip d4"></div><div class="drip d5"></div>
+            <div class="tier-decoration">✨ Sahithi ✨</div>
+        </div>
+
+        <!-- Cake plate -->
+        <div class="cake-plate"></div>
+
+        <!-- Knife -->
+        <div class="knife3d" id="knife3d">🔪</div>
+
+    </div>
+
+    <!-- Cut effect overlay -->
+    <div class="cake-cut-overlay" id="cakeCutOverlay"></div>
+
+</div>
+
+<button class="cut-ultimate-btn" onclick="ultimateCakeCut()">
+    Kathi Anduko Chinna
+</button>
+
+</section>
+
+<audio id="cheerSound">
+<source src="Cheers.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🥂 Drinks / Toast Section -->
+<section class="drinks-section" id="drinks">
+    <h2 class="section-title"> 🥂 Time to Toast! 🥂</h2>
+    
+    <div class="glasses-container" id="glassesContainer">
+
+        <!-- Left Glass --->
+        <div class="glass-wrapper left-glass" id="leftGlass" onclick="clinkGlasses()">
+            <div class="glass">
+                <div class="drink-liquid"></div>
+                <div class="bubble b1"></div>
+                <div class="bubble b2"></div>
+                <div class="bubble b3"></div>
+                <div class="bubble b4"></div>
+                <div class="glass-stem"></div>
+                <div class="glass-base"></div>
+            </div>
+        </div>
+
+        <!-- Clink Sparkle -->
+        <div class="clink-effect" id="clinkEffect">✨</div>
+
+        <!-- Right Glass --->
+        <div class="glass-wrapper right-glass" id="rightGlass" onclick="clinkGlasses()">
+            <div class="glass">
+                <div class="drink-liquid liquid-pink"></div>
+                <div class="bubble b1"></div>
+                <div class="bubble b2"></div>
+                <div class="bubble b3"></div>
+                <div class="bubble b4"></div>
+                <div class="glass-stem"></div>
+                <div class="glass-base"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Toast message shown after clink -->
+    <div class="toast-message" id="toastMessage">
+        <div class="toast-quote">
+            "Here's to you, Sahithi — to your laughter, your strength,<br>
+            and every beautiful adventure waiting ahead. 🌸"
+        </div>
+        <div class="toast-cheers">🥂 Cheers to 25! 🥂</div>
+    </div>
+
+    <button class="clink-btn" onclick="clinkGlasses()">
+        🥂 Cheers! 🥂
+    </button>
+</section>
+
+<!-- 🪄 Scratch Card Section -->
+<section class="scratch-section" id="scratchSection">
+    <h2 class="section-title">🪄 Scratch to Reveal Message 🪄</h2>
+    <div class="scratch-wrapper">
+        <canvas id="scratchCanvas" width="320" height="180"></canvas>
+        <div class="scratch-message" id="scratchMessage">
+            <span>💖</span>
+            <p>You are the most beautiful chapter<br>in our stories, Sachi. 🌸</p>
+            <span>💖</span>
+        </div>
+    </div>
+    <button class="scratch-reset-btn" id="scratchResetBtn" onclick="resetScratch()" style="display:none">🔄 Malli Scratch Cheyyali ani vundha? 🔄 </button>
+</section>
+
+<!-- 🎆 Grand Birthday Celebration Finale -->
+<section class="finale-section" id="finale">
+
+    <div class="finale-stars">
+        <span>⭐</span><span>✨</span><span>🌟</span><span>💫</span>
+        <span>💫</span><span>🌟</span><span>✨</span><span>⭐</span>
+    </div>
+
+    <div class="finale-inner">
+        <div class="finale-crown">👑</div>
+        <h2 class="finale-title">Grand Birthday Celebration</h2>
+        <p class="finale-subtitle">Ready for the big finale, Sahithi? 🎆</p>
+
+        <div class="finale-emoji-row">
+            <span>🌈</span><span>🪄</span><span>🚀</span>
+            <span>🏆</span>
+            <span>💎</span><span>🎸</span><span>🦋</span>
+        </div>
+
+        <button class="finale-btn" onclick="startBirthdayFinale()">
+            Chudalani Vundha...?
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- Birthday Message Section -->
+    <section class="message-section" id="message">
+        <div class="container">
+            <div class="message-card">
+            <h2 class="message-title">💖 A Special Message 💖</h2>
+            <p class="message-text">
+                Welcome to Level 2 of adulthood! Level 1 was surviving your teens—awkward smiles, overthinking, questionable fashion choices, and those “why did I even born?” moments. 
+                You leveled up beautifully, and now at 25, you’ve unlocked some serious perks:          
+            </p>
+            <p class="message-text">
+                The wisdom to actually know what you want (hope so 😉)<br>
+                The confidence to laugh at life’s chaos instead of crying<br>
+                And the perfect excuse to eat cake for breakfast without judgment 🎂
+            </p>
+            <p class="message-text">
+                Here’s to adventures, laughter, and showing the world that 25 isn’t old… it’s legendary. Keep slaying, leveling up, and being your incredible self! 💖            
+            </p>
+            <p class="message-highlight">
+                Happy 25th Birthday, Sony papa! ✨
+           </p>
+            
+            <div class="corner-names">
+                — Harisha Annapareddy
+            </div>
+
+            <div class="message-hearts">
+                <span class="heart-animation">❤️</span>
+                <span class="heart-animation">💕</span>
+                <span class="heart-animation">❤️</span>
+            </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 💌 Locked Letter Section -->
+<section class="letter-section" id="letterSection">
+    <h2 class="section-title">💌 A Letter Just For You 💌</h2>
+    
+    <div class="letter-scene" id="letterScene">
+
+        <!-- Butterflies (hidden until envelope opens) -->
+        <div class="butterfly-container" id="butterflyContainer">
+            <div class="butterfly b1">
+                <div class="wing wing-left"></div>
+                <div class="wing wing-right"></div>
+                <div class="butterfly-body"></div>
+            </div>
+            <div class="butterfly b2">
+                <div class="wing wing-left"></div>
+                <div class="wing wing-right"></div>
+                <div class="butterfly-body"></div>
+            </div>
+            <div class="butterfly b3">
+                <div class="wing wing-left"></div>
+                <div class="wing wing-right"></div>
+                <div class="butterfly-body"></div>
+            </div>
+            <div class="butterfly b4">
+                <div class="wing wing-left"></div>
+                <div class="wing wing-right"></div>
+                <div class="butterfly-body"></div>
+            </div>
+            <div class="butterfly b5">
+                <div class="wing wing-left"></div>
+                <div class="wing wing-right"></div>
+                <div class="butterfly-body"></div>
+            </div>
+        </div>
+
+        <!-- Envelope -->
+        <div class="envelope-wrapper" id="envelopeWrapper" onclick="openLetter()">
+            <div class="envelope" id="envelope">
+                <!-- Back flap (behind letter) -->
+                <div class="envelope-back"></div>
+
+                <!-- Letter inside -->
+                <div class="letter-paper" id="letterPaper">
+                    <div class="letter-paper-inner">
+                        <div class="letter-deco-top">🌸 ✨ 🌸</div>
+                        <h3 class="letter-heading">Dear Sahithi,</h3>
+                        <p class="letter-body">
+                            I've been trying to find the right words to describe what your friendship means to me, and honestly? No message is ever going to be enough.                       
+                        </p>
+                        <p class="letter-body">
+                            But in all seriousness, you are one of the greatest people I know. You have this way of making people feel seen, heard, and like everything is going to be okay 
+                            and you've done that for me more times than I can count. You show up, you listen, you tell me the truth even when I don't want to hear it.                      
+                        </p>
+                        <p class="letter-body">
+                            I don't say it enough, but I am so grateful for you. For your friendship, your patience with my chaos, your ability to make me laugh on my worst days, and just... for being YOU.
+                        </p>
+                        <div class="letter-closing">
+                            With all the love in the world,<br>
+                            <span class="letter-sign">— Kalyan Kanchi 💙</span>
+                        </div>
+                        <div class="letter-deco-bottom">💞 Happy 25th 💞</div>
+                    </div>
+                </div>
+
+                <!-- Envelope front flap (the one that opens) -->
+                <div class="envelope-flap" id="envelopeFlap">
+                    <div class="flap-inner"></div>
+                </div>
+
+                <!-- Envelope front body (covers bottom half) -->
+                <div class="envelope-front"></div>
+
+                <!-- Wax seal -->
+                <div class="wax-seal" id="waxSeal">
+                    <span class="seal-text">💌</span>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</section>
+
+<!-- 🎁 3D Surprise Box -->
+<section class="surprise-section">
+
+<h2 class="section-title">🎁 A Special Surprise For You 🎁</h2>
+
+<div class="gift-container" onclick="openGiftBox()">
+
+<div class="gift-box" id="giftBox">
+
+<div class="gift-lid"></div>
+<div class="gift-body"></div>
+
+</div>
+
+</div>
+
+<div id="surpriseVideoWrapper" class="surprise-video-wrapper">
+
+<div class="video-container">
+
+<span class="close-surprise-video" onclick="closeSurpriseVideo()">✖</span>
+
+<video id="surpriseVideo" controls playsinline>
+<source src="Surprise video.mp4" type="video/mp4">
+</video>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- 🎵 Last Audio -->
+<audio id="lastAudio" preload="auto">
+    <source src="Final Audio.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="inkaUnnayiAudio" preload="auto">
+    <source src="Dedicated.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🎉 "There's More" reveal button — shown after surprise video closes -->
+<div class="theres-more-wrapper" id="theresMoreWrapper">
+    <button class="theres-more-btn" onclick="openComedyStory()">
+        <span class="theres-more-icon">😏</span>
+        Eppudu asal vundhi...
+        <span class="theres-more-arrow">→</span>
+    </button>
+</div>
+
+<!-- 😂 Comedy Story Viewer (full-screen overlay) -->
+<div id="comedyStoryOverlay" class="comedy-story-overlay">
+
+    <!-- Progress dots -->
+    <div class="story-progress" id="storyProgress"></div>
+
+    <!-- Close -->
+    <button class="story-close-btn" onclick="closeComedyStory()">✖</button>
+
+    <!-- Photo display -->
+    <div class="story-card-wrap">
+        <img id="storyPhoto" class="story-photo" src="" alt="Comedy photo">
+    </div>
+
+    <!-- Navigation arrows -->
+    <button class="story-nav-btn story-prev" id="storyPrev" onclick="storyNav(-1)">&#8592;</button>
+    <button class="story-nav-btn story-next" id="storyNext" onclick="storyNav(1)">&#8594;</button>
+
+    <!-- Counter -->
+    <div class="story-counter" id="storyCounter">1 / 1</div>
+
+</div>
+
+<!-- 🎵 Secret Songs Reveal Button (shown after comedy story closes) -->
+<div class="dedicate-more-wrapper" id="dedicateMoreWrapper">
+    <button class="dedicate-more-btn" onclick="openDedicateOverlay()">
+        <span class="dedicate-more-icon">🎵</span>
+        Inka Unnayi...
+        <span class="dedicate-more-arrow">→</span>
+    </button>
+</div>
+
+<!-- 🎵 Dedicated Songs Full-Screen Overlay -->
+<div id="dedicateOverlay" class="dedicate-overlay">
+
+    <!-- Close -->
+    <button class="dedicate-close-btn" onclick="closeDedicateOverlay()">✖</button>
+
+    <!-- Title -->
+    <div class="dedicate-overlay-title">🎵 Songs Just For You Boss 🎵</div>
+    
+
+    <!-- Navigation arrows -->
+    <button class="dedicate-nav dedicate-prev" id="dedicatePrev" onclick="dedicateNav(-1)">&#8592;</button>
+    <button class="dedicate-nav dedicate-next" id="dedicateNext" onclick="dedicateNav(1)">&#8594;</button>
+
+    <!-- Photo frame -->
+    <div class="dedicate-frame" id="dedicateFrame" onclick="toggleDedicateSong()">
+        <img id="dedicatePhoto" class="dedicate-photo" src="Dedicated 1.jpg" alt="Dedicated photo">
+
+        <!-- Play / Pause overlay -->
+        <div class="dedicate-play-overlay" id="dedicatePlayOverlay">
+            <div class="dedicate-play-btn">Play</div>
+        </div>
+
+        <!-- Vinyl spin badge -->
+        <div class="dedicate-vinyl" id="dedicateVinyl">🎵</div>
+    </div>
+
+    <!-- Soundwave bars -->
+    <div class="dedicate-soundwave" id="dedicateSoundwave">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Dot indicators -->
+    <div class="dedicate-dots" id="dedicateDots">
+        <span class="dedicate-dot active" onclick="dedicateGoTo(0)"></span>
+        <span class="dedicate-dot" onclick="dedicateGoTo(1)"></span>
+        <span class="dedicate-dot" onclick="dedicateGoTo(2)"></span>
+        <span class="dedicate-dot" onclick="dedicateGoTo(3)"></span>
+        <span class="dedicate-dot" onclick="dedicateGoTo(4)"></span>
+        <span class="dedicate-dot" onclick="dedicateGoTo(5)"></span>
+    </div>
+
+    <!-- Hidden audio elements -->
+    <audio id="dedicateAudio1" preload="auto"><source src="Dedicated1.mp3" type="audio/mpeg"></audio>
+    <audio id="dedicateAudio2" preload="auto"><source src="Dedicated2.mp3" type="audio/mpeg"></audio>
+    <audio id="dedicateAudio3" preload="auto"><source src="Dedicated3.mp3" type="audio/mpeg"></audio>
+    <audio id="dedicateAudio4" preload="auto"><source src="Dedicated4.mp3" type="audio/mpeg"></audio>
+    <audio id="dedicateAudio5" preload="auto"><source src="Dedicated5.mp3" type="audio/mpeg"></audio>
+    <audio id="dedicateAudio6" preload="auto"><source src="Dedicated6.mp3" type="audio/mpeg"></audio>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+
+</html>
